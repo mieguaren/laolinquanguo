@@ -77,9 +77,13 @@ body{
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 /* 微信号（后台可改；点一下复制） */
+.wx-row{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;
+    margin-top:14px;max-width:100%;
+}
 .wx{
-    display:inline-flex;align-items:center;gap:9px;max-width:100%;
-    margin-top:14px;padding:7px 8px 7px 13px;
+    display:inline-flex;align-items:center;gap:9px;flex:0 0 auto;max-width:100%;
+    margin-top:0;padding:7px 8px 7px 13px;
     border-radius:13px;
     background:linear-gradient(160deg,rgba(231,192,106,.11),rgba(231,192,106,.035));
     border:1px solid rgba(231,192,106,.26);
@@ -904,13 +908,12 @@ body{
 <span class="sub-title">👉务必收藏保存，合作产品实时更新</span>
 <span class="upd" title="页面内容最近更新：2026-11-16 15:02:28"><i>更新于</i><b>2026.11.16 15:02</b></span>
 </div>
-<div class="wx" data-wx="qmq379"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.9c-4.5 0-8.2 3-8.2 6.8 0 2.2 1.2 4.1 3.1 5.4l-.8 2.6 3-1.4c.9.3 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.9 12 3.9Z"/><circle cx="9" cy="10.4" r="1.05"/><circle cx="12.1" cy="10.4" r="1.05"/><circle cx="15.2" cy="10.4" r="1.05"/></svg><span class="wx-l">微信号</span><b class="wx-n">qmq379</b><button class="wx-c" type="button" aria-label="复制微信号">复制</button></div><div class="wx-tip">加天宇微信咨询合作共赢</div><script>
+<div class="wx-row">
+<div class="wx" data-wx="hp03516800"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.9c-4.5 0-8.2 3-8.2 6.8 0 2.2 1.2 4.1 3.1 5.4l-.8 2.6 3-1.4c.9.3 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.9 12 3.9Z"/><circle cx="9" cy="10.4" r="1.05"/><circle cx="12.1" cy="10.4" r="1.05"/><circle cx="15.2" cy="10.4" r="1.05"/></svg><span class="wx-l">微信号</span><b class="wx-n">hp03516800</b><button class="wx-c" type="button" aria-label="复制微信号">复制</button></div>
+<div class="wx" data-wx="gyk154528gyk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.9c-4.5 0-8.2 3-8.2 6.8 0 2.2 1.2 4.1 3.1 5.4l-.8 2.6 3-1.4c.9.3 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.9 12 3.9Z"/><circle cx="9" cy="10.4" r="1.05"/><circle cx="12.1" cy="10.4" r="1.05"/><circle cx="15.2" cy="10.4" r="1.05"/></svg><span class="wx-l">微信号</span><b class="wx-n">gyk154528gyk</b><button class="wx-c" type="button" aria-label="复制微信号">复制</button></div>
+</div><div class="wx-tip">加天宇微信咨询合作共赢</div><script>
 (function () {
-  var box = document.querySelector('.wx[data-wx]');
-  if (!box) return;
-  var btn = box.querySelector('.wx-c');
-  var id  = box.getAttribute('data-wx') || '';
-  var tmr = null;
+  var boxes = document.querySelectorAll('.wx[data-wx]');
 
   function copyText(t) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -931,32 +934,41 @@ body{
       } catch (e) { rej(e); }
     });
   }
-  function flash(txt, ok) {
-    btn.textContent = txt;
-    if (ok) btn.classList.add('ok');
-    clearTimeout(tmr);
-    tmr = setTimeout(function () {
-      btn.textContent = '复制';
-      btn.classList.remove('ok');
-    }, 1900);
-  }
 
-  btn.addEventListener('click', function () {
-    copyText(id).then(function () { flash('已复制', true); })
-                 .catch(function () { flash('长按号码复制', false); });
-  });
-  /* 号码本身也能点 */
-  var num = box.querySelector('.wx-n');
-  if (num) {
-    num.addEventListener('click', function () {
-      if (window.getSelection) {
-        var r = document.createRange();
-        r.selectNodeContents(num);
-        var s = window.getSelection();
-        s.removeAllRanges();
-        s.addRange(r);
+  for (var i = 0; i < boxes.length; i++) {
+    (function (box) {
+      var btn = box.querySelector('.wx-c');
+      var id  = box.getAttribute('data-wx') || '';
+      var tmr = null;
+
+      function flash(txt, ok) {
+        btn.textContent = txt;
+        if (ok) btn.classList.add('ok');
+        clearTimeout(tmr);
+        tmr = setTimeout(function () {
+          btn.textContent = '复制';
+          btn.classList.remove('ok');
+        }, 1900);
       }
-    });
+
+      btn.addEventListener('click', function () {
+        copyText(id).then(function () { flash('已复制', true); })
+                     .catch(function () { flash('长按号码复制', false); });
+      });
+      /* 号码本身也能点 */
+      var num = box.querySelector('.wx-n');
+      if (num) {
+        num.addEventListener('click', function () {
+          if (window.getSelection) {
+            var r = document.createRange();
+            r.selectNodeContents(num);
+            var s = window.getSelection();
+            s.removeAllRanges();
+            s.addRange(r);
+          }
+        });
+      }
+    })(boxes[i]);
   }
 })();
 </script></header>
