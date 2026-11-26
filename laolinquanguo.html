@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b14">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/app-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/app-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="老林（全国）">
+<title>老林（全国）的业务范围</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+    --bg:#070b14;
+    --ink:#e8eefc;
+    --ink-2:#a8b7d4;
+    --ink-3:#77869f;
+    --gold:#e7c06a;
+    --gold-2:#f7e3b0;
+    --line:rgba(150,172,212,.14);
+    --radius:18px;
+}
+html{-webkit-text-size-adjust:100%}
+body{
+    min-height:100vh;
+    padding:26px 14px 34px;
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:15px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background:
+        radial-gradient(1100px 600px at 50% -12%, rgba(56,104,255,.30), transparent 62%),
+        radial-gradient(820px 500px at 92% 6%, rgba(90,210,255,.13), transparent 60%),
+        radial-gradient(720px 620px at 2% 34%, rgba(118,76,255,.12), transparent 62%),
+        var(--bg);
+}
+.wrap{width:100%;max-width:940px;margin:0 auto}
+
+/* ---------- 顶部 ---------- */
+.hero{position:relative;padding:24px 6px 26px;text-align:center}
+.hero::before{
+    content:"";
+    position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:64px;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.top-title{
+    font-size:clamp(20px,5vw,29px);
+    font-weight:800;
+    line-height:1.4;
+    letter-spacing:.5px;
+    color:#f9ecc9;
+    text-shadow:0 0 30px rgba(231,192,106,.30),0 2px 12px rgba(0,0,0,.45);
+    text-wrap:balance;
+}
+.hero-meta{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    flex-wrap:nowrap;margin-top:15px;
+}
+.sub-title{
+    display:inline-block;
+    min-width:0;max-width:100%;
+    padding:5px 15px;
+    font-size:13px;
+    line-height:1.6;
+    color:var(--ink-3);
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,.035);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+/* 微信号（后台可改；点一下复制） */
+.wx{
+    display:inline-flex;align-items:center;gap:9px;max-width:100%;
+    margin-top:14px;padding:7px 8px 7px 13px;
+    border-radius:13px;
+    background:linear-gradient(160deg,rgba(231,192,106,.11),rgba(231,192,106,.035));
+    border:1px solid rgba(231,192,106,.26);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+    -webkit-tap-highlight-color:transparent;
+}
+.wx>svg{
+    width:17px;height:17px;flex:0 0 auto;
+    fill:none;stroke:var(--gold);stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;
+}
+.wx>svg circle{fill:var(--gold);stroke:none}
+.wx-l{flex:0 0 auto;font-size:11.5px;color:rgba(231,192,106,.74);letter-spacing:.9px;white-space:nowrap}
+.wx-n{
+    flex:1 1 auto;min-width:0;
+    font-size:14.5px;font-weight:700;line-height:1.2;
+    color:#f2dfb6;letter-spacing:.5px;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;
+}
+.wx-c{
+    flex:0 0 auto;margin-left:2px;height:28px;padding:0 12px;border-radius:9px;
+    border:1px solid rgba(231,192,106,.30);background:rgba(231,192,106,.12);
+    color:#ead0a0;font:inherit;font-size:12.5px;font-weight:600;letter-spacing:.4px;
+    cursor:pointer;transition:background .2s,color .2s,transform .15s;
+}
+.wx-c:active{transform:scale(.95)}
+.wx-c.ok{background:rgba(231,192,106,.28);color:#fff2cf;border-color:rgba(231,192,106,.5)}
+@media(hover:hover){ .wx-c:hover{background:rgba(231,192,106,.20);color:#f6e3bb} }
+.wx-tip{
+    margin-top:8px;font-size:11.8px;line-height:1.6;
+    color:rgba(150,172,212,.68);letter-spacing:.5px;
+}
+/* 更新时间（顶部状态条） */
+.upd{
+    display:inline-flex;align-items:center;gap:6px;
+    flex:0 0 auto;
+    padding:5px 13px 5px 11px;
+    font-size:12.5px;
+    line-height:1.6;
+    letter-spacing:.2px;
+    color:#a9b8d2;
+    border-radius:999px;
+    border:1px solid rgba(231,192,106,.20);
+    background:linear-gradient(90deg,rgba(231,192,106,.10),rgba(231,192,106,.03));
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+}
+.upd i{font-style:normal;color:#96a7c2}
+.upd::before{
+    content:"";
+    width:5px;height:5px;flex:0 0 5px;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 0 3px rgba(231,192,106,.15);
+    animation:fxdot 3s ease-in-out infinite;
+}
+@keyframes fxdot{
+    0%,100%{box-shadow:0 0 0 3px rgba(231,192,106,.15)}
+    50%{box-shadow:0 0 0 5px rgba(231,192,106,.05)}
+}
+.upd b{font-weight:600;color:#e3c891;letter-spacing:.4px}
+
+/* ---------- 卡片（一个大项 = 一张卡） ---------- */
+/* 大项之间拉大间距，每张卡视觉上彻底分开 */
+.cards{display:grid;gap:34px;margin-top:10px}
+
+/* ---------- 底部：左浏览 / 右添加到桌面 ---------- */
+.pfoot{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    max-width:520px;margin:30px auto 4px;padding:16px 2px 0;
+    border-top:1px solid rgba(150,172,212,.13);
+    font-size:12.5px;color:var(--ink-3);letter-spacing:.5px;
+    -webkit-tap-highlight-color:transparent;
+}
+.pfoot .pf-i{
+    display:inline-flex;align-items:center;gap:6px;
+    border:0;background:none;font:inherit;color:inherit;letter-spacing:inherit;
+    padding:5px 7px;border-radius:10px;
+}
+.pfoot .pf-vi{padding-left:0}
+.pfoot svg{
+    width:15px;height:15px;flex:0 0 auto;
+    fill:none;stroke:currentColor;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;
+    color:rgba(231,192,106,.72);
+}
+.pfoot b{
+    font-variant-numeric:tabular-nums;font-weight:700;
+    font-size:13.5px;color:var(--ink-2);letter-spacing:.3px;
+}
+.pfoot .pf-add{
+    cursor:pointer;color:var(--gold);
+    background:rgba(231,192,106,.09);
+    border:1px solid rgba(231,192,106,.22);
+    padding:6px 12px 6px 10px;
+    transition:background .25s,color .25s,transform .18s,border-color .25s,box-shadow .25s;
+}
+.pfoot .pf-add svg{color:var(--gold)}
+.pfoot .pf-add:active{transform:scale(.96)}
+.pfoot .pf-add[hidden]{display:none}
+/* 能一键装的时候，按钮变实底金，一眼看出可以点 */
+.pfoot .pf-add.one{
+    color:#241905;font-weight:700;
+    background:linear-gradient(150deg,#f2d79c,#dcb26c 78%);
+    border-color:rgba(246,224,176,.55);
+    box-shadow:0 8px 18px -12px rgba(231,192,106,.9),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.pfoot .pf-add.one svg{color:#241905;stroke-width:1.9}
+.pfoot .pf-add.busy{opacity:.75;pointer-events:none}
+@media(hover:hover){
+    .pfoot .pf-add:hover{background:rgba(231,192,106,.16);color:var(--gold-2);border-color:rgba(231,192,106,.36)}
+    .pfoot .pf-add.one:hover{background:linear-gradient(150deg,#f7e2b2,#e2ba76 78%);color:#241905}
+}
+.pfoot .up b{animation:pfPop .85s ease-out}
+@keyframes pfPop{
+    0%{color:var(--gold);transform:scale(1.06)}
+    100%{color:var(--ink-2);transform:scale(1)}
+}
+@media (prefers-reduced-motion:reduce){
+    .pfoot .up b{animation:none}
+}
+@media (max-width:360px){
+    .pfoot{font-size:12px}
+    .pfoot .pf-add{padding:6px 10px 6px 8px}
+}
+
+/* ---------- 添加到桌面：引导浮层 ---------- */
+.pinst{position:fixed;inset:0;z-index:99;display:flex;align-items:flex-end;justify-content:center}
+.pinst[hidden]{display:none}
+.pinst-mask{
+    position:absolute;inset:0;background:rgba(4,7,13,.72);
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+    animation:pinstIn .26s ease-out;
+}
+.pinst-box{
+    position:relative;width:100%;max-width:460px;
+    max-height:calc(100vh - 32px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+    margin:0 12px 12px;padding:22px 20px 20px;
+    border-radius:20px;
+    background:linear-gradient(160deg,#1a2438,#0d1421 86%);
+    border:1px solid rgba(231,192,106,.20);
+    box-shadow:0 26px 60px -22px rgba(0,0,0,.9);
+    color:var(--ink-2);
+    animation:pinstUp .32s cubic-bezier(.22,1,.36,1);
+}
+.pinst-box h4{
+    font-size:15.5px;font-weight:800;letter-spacing:.6px;color:#f2dfb6;
+    padding-right:34px;
+}
+.pinst-x{
+    position:absolute;top:12px;right:12px;width:30px;height:30px;
+    border:0;border-radius:9px;background:rgba(255,255,255,.06);
+    color:rgba(226,235,250,.7);font-size:13px;line-height:1;cursor:pointer;
+}
+.pinst-box p{font-size:13px;line-height:1.75;color:var(--ink-3);margin-top:12px}
+.pinst-box em{font-style:normal;color:#ead0a0;font-weight:600}
+.pst{list-style:none;margin:12px 0 0}
+.pst li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid rgba(150,172,212,.10)}
+.pst li:first-child{border-top:0}
+.pst b{
+    flex:0 0 auto;width:20px;height:20px;margin-top:1px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11.5px;font-weight:700;color:#1a1206;
+    background:linear-gradient(150deg,#f0d192,#d8b06a);
+}
+.pst span{font-size:13px;line-height:1.62;color:var(--ink-2)}
+.pico{display:inline-flex;vertical-align:-3px;margin:0 2px}
+.pico svg{width:16px;height:16px;fill:none;stroke:#ead0a0;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pnote{font-size:12.2px !important;color:rgba(150,172,212,.72) !important;margin-top:14px !important}
+/* iPhone：卡片居中偏上，别挡住屏幕最下面那排工具栏 */
+.pinst.t-ios{align-items:center;padding:0 12px}
+.pinst.t-ios .pinst-box{margin:0 auto}
+.pst2 li{padding:12px 0}
+.pst2 span{font-size:13.4px}
+.parrow{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    margin-top:16px;padding-top:13px;
+    border-top:1px dashed rgba(231,192,106,.22);
+    font-size:12.2px;color:rgba(231,192,106,.82);letter-spacing:.4px;
+}
+/* 画一条假的 Safari 工具栏，把「分享」高亮出来 —— 比纯文字好找 */
+.plead{font-size:13px !important;color:var(--ink-2) !important;margin-top:10px !important}
+.pbar{
+    display:flex;align-items:center;justify-content:center;gap:20px;
+    margin:14px auto 0;padding:10px 20px;width:fit-content;
+    border-radius:13px;background:rgba(255,255,255,.045);
+    border:1px solid rgba(150,172,212,.16);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+}
+.pbar span{width:15px;height:15px;border-radius:4px;background:rgba(150,172,212,.22)}
+.pbar .on{
+    display:flex;align-items:center;justify-content:center;
+    width:32px;height:32px;border-radius:9px;
+    background:linear-gradient(150deg,#f2d79c,#dcb26c);
+    box-shadow:0 0 0 3px rgba(231,192,106,.16),0 6px 14px -8px rgba(231,192,106,.9);
+    animation:pbarGlow 2s ease-in-out infinite;
+}
+.pbar .on svg{width:18px;height:18px;fill:none;stroke:#2a1d06;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@keyframes pbarGlow{
+    0%,100%{box-shadow:0 0 0 3px rgba(231,192,106,.14),0 6px 14px -8px rgba(231,192,106,.8)}
+    50%{box-shadow:0 0 0 6px rgba(231,192,106,.06),0 6px 16px -8px rgba(231,192,106,.95)}
+}
+.pbart{
+    font-size:12.1px !important;line-height:1.65 !important;
+    color:rgba(231,192,106,.86) !important;text-align:center;margin-top:10px !important;
+}
+@media (prefers-reduced-motion:reduce){ .pbar .on{animation:none} }
+
+/* 画一台"小手机"，把浏览器菜单按钮的正确位置点亮 —— 文字描述方位各家版本不一样，图不会骗人 */
+.pnav{
+    position:relative;width:128px;height:106px;margin:8px auto 2px;
+    border-radius:15px;overflow:hidden;
+    border:1px solid rgba(150,172,212,.20);
+    background:linear-gradient(180deg,rgba(10,16,28,.92),rgba(8,13,24,.72));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.pnav i{
+    position:absolute;left:0;right:0;display:flex;align-items:center;
+    font-style:normal;background:rgba(255,255,255,.035);
+}
+.pnav .pt{top:0;height:25px;padding:0 7px;justify-content:flex-end;border-bottom:1px solid rgba(150,172,212,.12)}
+.pnav .pb{bottom:0;height:27px;padding:0 8px;justify-content:space-between;border-top:1px solid rgba(150,172,212,.12)}
+.pnav .pm{
+    position:absolute;top:25px;bottom:27px;left:0;right:0;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;letter-spacing:2.6px;color:rgba(150,172,212,.30);
+}
+.pnav u{display:block;width:26px;height:4px;border-radius:3px;background:rgba(150,172,212,.18)}
+.pnav .mg{
+    display:flex;align-items:center;justify-content:center;
+    width:20px;height:20px;border-radius:6px;
+    font-size:13px;font-weight:700;line-height:1;
+    color:rgba(150,172,212,.36);
+}
+.pnav .mg.on{
+    color:#2a1d06;
+    background:linear-gradient(150deg,#f2d79c,#dcb26c);
+    box-shadow:0 0 0 3px rgba(231,192,106,.15);
+    animation:pbarGlow 2s ease-in-out infinite;
+}
+.pnavcap{
+    font-size:12px !important;line-height:1.6 !important;text-align:center;
+    color:rgba(231,192,106,.80) !important;margin:9px 0 2px !important;
+}
+.plink{
+    border:0;background:none;padding:0 2px;font:inherit;font-size:12.2px;
+    color:#ead0a0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+}
+.pcopy{
+    width:100%;margin-top:16px;height:42px;border-radius:11px;
+    border:1px solid rgba(231,192,106,.28);
+    background:rgba(231,192,106,.10);color:#ead0a0;
+    font:inherit;font-size:13.5px;font-weight:600;letter-spacing:.5px;cursor:pointer;
+}
+.pcopy:active{transform:scale(.985)}
+.pcopy.ok{background:rgba(231,192,106,.20);color:#f4dcaa}
+@keyframes pinstIn{from{opacity:0}to{opacity:1}}
+@keyframes pinstUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+    .pinst-mask,.pinst-box{animation:none}
+}
+
+.card{
+    position:relative;
+    padding:24px 24px 24px;
+    border-radius:var(--radius);
+    border:1px solid rgba(150,172,212,.30);
+    background:linear-gradient(165deg,rgba(34,49,79,.88),rgba(12,19,33,.80));
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.085),
+        inset 0 0 0 1px rgba(255,255,255,.02),
+        0 1px 0 rgba(255,255,255,.05),
+        0 22px 46px -28px rgba(0,0,0,1),
+        0 0 46px -26px rgba(98,142,255,.55);
+    transition:border-color .35s ease,box-shadow .35s ease,padding .34s cubic-bezier(.22,1,.36,1);
+    animation:fxrise .5s cubic-bezier(.2,.8,.2,1) backwards;
+}
+/* 收起时上下收紧，8 个大项能一屏看全，像一份目录 */
+.card.closed{padding-top:12px;padding-bottom:13px}
+/* 展开后整卡暖起来，一眼看出这一张是打开的 */
+.card.foldable:not(.closed){
+    border-color:rgba(231,192,106,.30);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.09),
+        inset 0 0 0 1px rgba(255,255,255,.02),
+        0 24px 52px -26px rgba(0,0,0,1),
+        0 0 58px -24px rgba(231,192,106,.40);
+}
+/* 卡片顶部一条渐隐金线：一眼能看出"这一大项从这里开始" */
+.card::after{
+    content:"";
+    position:absolute;top:0;left:24px;right:24px;
+    height:1px;
+    background:linear-gradient(90deg,rgba(231,192,106,.55),rgba(231,192,106,.06) 46%,transparent 78%);
+    pointer-events:none;
+}
+@keyframes fxrise{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+.card::before{
+    content:"";
+    position:absolute;top:0;left:24px;
+    width:52px;height:2px;
+    border-radius:0 0 3px 3px;
+    background:linear-gradient(90deg,var(--gold),rgba(231,192,106,0));
+    opacity:.75;
+}
+@media (hover:hover) and (pointer:fine){
+    .card:hover{
+        border-color:rgba(231,192,106,.30);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,.07),
+            0 22px 50px -24px rgba(0,0,0,.95),
+            0 0 0 1px rgba(231,192,106,.10);
+    }
+}
+.card h3{
+    position:relative;
+    margin-bottom:13px;
+    padding-left:15px;
+    font-size:18px;
+    font-weight:700;
+    line-height:1.55;
+    letter-spacing:.3px;
+    color:#f6e0a8;
+}
+.card h3::before{
+    content:"";
+    position:absolute;left:0;top:.33em;
+    width:3px;height:1.1em;
+    border-radius:3px;
+    background:linear-gradient(180deg,var(--gold-2),var(--gold));
+    box-shadow:0 0 12px rgba(231,192,106,.5);
+}
+/* 大项标题 · 可选样式 */
+/* 胶囊：一圈描边 + 渐变底，明显强于默认标题 */
+.card h3.t-label{
+    display:inline-block;
+    margin-bottom:15px;
+    padding:6px 16px 7px;
+    border-radius:11px;
+    border:1.5px solid rgba(242,203,124,.40);
+    background:linear-gradient(180deg,rgba(242,203,124,.20),rgba(231,192,106,.07));
+    box-shadow:
+        inset 0 1px 0 rgba(255,240,206,.14),
+        0 0 0 3px rgba(231,192,106,.06);
+    font-size:16.5px;
+    font-weight:700;
+    color:#ffefc9;
+}
+/* 强调块：整块四周一圈金边 + 光晕，左侧亮金竖条 */
+.card h3.t-bar{
+    position:relative;
+    margin-bottom:16px;
+    padding:13px 16px 14px;
+    border-radius:13px;
+    border:1.5px solid rgba(252,220,152,.88);
+    background:
+        linear-gradient(90deg,rgba(255,236,182,.98) 0 3.5px,rgba(255,236,182,0) 3.5px),
+        radial-gradient(135% 220% at 0% 0%,rgba(250,200,112,.44),rgba(250,200,112,0) 64%),
+        linear-gradient(100deg,rgba(242,190,100,.30),rgba(242,190,100,.05) 74%);
+    box-shadow:
+        inset 0 1px 0 rgba(255,246,220,.26),
+        inset 0 0 0 1px rgba(255,230,180,.16),
+        0 0 0 1px rgba(255,238,196,.10),
+        0 0 0 5px rgba(231,192,106,.09),
+        0 14px 30px -22px rgba(238,181,78,.95);
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.4px;
+    color:#fff6e0;
+    text-shadow:0 1px 14px rgba(238,181,78,.34);
+}
+.card h3.t-plain{
+    padding-left:0;
+    font-weight:600;
+    letter-spacing:.2px;
+    color:#e6edfa;
+}
+.card h3.t-label::before,
+.card h3.t-bar::before,
+.card h3.t-plain::before{display:none}
+.card p{margin:9px 0;font-size:15px;line-height:1.9;color:var(--ink-2)}
+.card p:first-of-type{margin-top:0}
+.card p:last-child{margin-bottom:0}
+/* 正文里被 [center] 包住的一段：整段居中 */
+.card .ctr{display:block;text-align:center}
+/* 正文加粗：比普通正文更亮更重，深色底上才跳得出来 */
+.card b.hl{color:#ffe3a8;font-weight:800}
+/* 正文彩色文字（后台选的颜色） */
+.card .cl{font-weight:600}
+/* 正文里的链接（后台写 [文字](https://…) 或直接贴网址） */
+.card a.lk{
+    color:#e7c06a;font-weight:600;
+    text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;
+    word-break:break-all;
+    transition:color .2s;
+}
+.card a.lk:visited{color:#c9a66a}
+.card a.lk:active{opacity:.72}
+@media(hover:hover){ .card a.lk:hover{color:#f6ddaa} }
+
+/* ---------- 大项折叠：整行标题可点，右侧 右／下 箭头指示 ---------- */
+.card-hd{
+    position:relative;
+    display:flex;align-items:center;gap:14px;
+    cursor:pointer;user-select:none;
+    -webkit-tap-highlight-color:transparent;
+    border-radius:14px;
+    outline:none;
+}
+/* 悬停时整行浮起一层暖光，明确告诉你"这一行可以点" */
+.card-hd::before{
+    content:"";position:absolute;inset:-11px -12px;
+    border-radius:15px;
+    background:linear-gradient(90deg,rgba(231,192,106,.085),rgba(231,192,106,.015) 62%,rgba(231,192,106,0));
+    opacity:0;pointer-events:none;
+    transition:opacity .32s ease;
+}
+.card-hd h3{flex:1 1 auto;min-width:0}
+.card-hd:focus-visible{box-shadow:0 0 0 3px rgba(231,192,106,.26)}
+.card-cv{
+    position:relative;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+    width:34px;height:34px;
+    border-radius:50%;
+    border:1px solid rgba(150,172,212,.30);
+    background:radial-gradient(circle at 50% 22%,rgba(255,255,255,.10),rgba(255,255,255,.015) 72%);
+    color:rgba(231,192,106,.95);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+    transform:rotate(0deg);
+    transition:transform .46s cubic-bezier(.32,1.3,.56,1),border-color .34s ease,background .34s ease,box-shadow .34s ease;
+}
+.card-cv svg{width:15px;height:15px;display:block;overflow:visible}
+.card-cv svg path{fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+/* 收起＝箭头朝右；展开＝顺转 90° 朝下（弹簧缓动，手感更顺） */
+.card:not(.closed) .card-cv{
+    transform:rotate(90deg);
+    border-color:rgba(231,192,106,.52);
+    background:rgba(231,192,106,.15);
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 0 0 4px rgba(231,192,106,.06),
+        0 0 20px -6px rgba(231,192,106,.70);
+}
+.card.closed .card-hd h3{margin-bottom:0}
+@media (hover:hover) and (pointer:fine){
+    .card.foldable .card-hd:hover::before{opacity:1}
+    .card.foldable .card-hd:hover .card-cv{
+        border-color:rgba(231,192,106,.58);
+        background:rgba(231,192,106,.15);
+        box-shadow:0 0 0 4px rgba(231,192,106,.07);
+    }
+}
+/* 内容区：高度交给脚本做弹性过渡，中途可打断，点快了也不会跳一下 */
+.card-bd{overflow:hidden;height:0}
+.card:not(.closed) .card-bd{height:auto}
+.card-in{
+    opacity:0;
+    transform:translateY(-7px);
+    transition:opacity .34s ease,transform .46s cubic-bezier(.22,1,.36,1);
+}
+.card:not(.closed) .card-in{
+    opacity:1;
+    transform:none;
+    transition-delay:.05s;
+}
+
+/* 独立加粗小行（分节标题） */
+.card p.head{
+    margin:20px 0 6px;
+    font-size:14.5px;
+    font-weight:700;
+    letter-spacing:.5px;
+    color:var(--gold-2);
+}
+.card p.head:first-of-type{margin-top:0}
+
+/* 整段提醒块（强调） */
+.card p.strong{
+    position:relative;
+    margin:17px 0 4px;
+    padding:14px 18px 15px 50px;
+    border-radius:14px;
+    border:1.5px solid rgba(247,203,124,.62);
+    background:
+        radial-gradient(130% 170% at 0% 0%,rgba(247,197,108,.22),rgba(247,197,108,0) 62%),
+        linear-gradient(100deg,rgba(233,178,88,.16),rgba(233,178,88,.04) 72%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,228,175,.10),
+        inset 0 1px 0 rgba(255,240,206,.12),
+        0 0 0 4px rgba(245,192,105,.10),
+        0 0 26px -6px rgba(238,181,78,.42);
+    color:#f6e6c6;
+    font-size:15.5px;
+    font-weight:600;
+    line-height:1.9;
+    animation:fxring 4s ease-in-out infinite;
+}
+/* 一圈环绕的呼吸光 */
+@keyframes fxring{
+    0%,100%{
+        box-shadow:
+            inset 0 0 0 1px rgba(255,228,175,.10),
+            inset 0 1px 0 rgba(255,240,206,.12),
+            0 0 0 4px rgba(245,192,105,.08),
+            0 0 24px -8px rgba(238,181,78,.34);
+    }
+    50%{
+        box-shadow:
+            inset 0 0 0 1px rgba(255,228,175,.18),
+            inset 0 1px 0 rgba(255,240,206,.12),
+            0 0 0 5px rgba(245,192,105,.17),
+            0 0 34px -6px rgba(238,181,78,.62);
+    }
+}
+/* 左侧感叹号徽标 */
+.card p.strong::before{
+    content:"!";
+    position:absolute;left:16px;top:13px;
+    width:22px;height:22px;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:50%;
+    font-size:14px;
+    font-weight:800;
+    font-style:normal;
+    line-height:1;
+    color:#40290a;
+    background:linear-gradient(180deg,#ffe7b0,#eeb54e);
+    box-shadow:0 0 0 3px rgba(244,190,95,.16),0 0 18px rgba(238,181,78,.45);
+    animation:fxbell 3.4s ease-in-out infinite;
+}
+@keyframes fxbell{
+    0%,100%{box-shadow:0 0 0 3px rgba(244,190,95,.16),0 0 18px rgba(238,181,78,.45)}
+    50%{box-shadow:0 0 0 5px rgba(244,190,95,.05),0 0 26px rgba(238,181,78,.75)}
+}
+/* 提醒块开头的大标题：“注意 / 温馨提醒”做成带环绕描边的徽章 */
+.card p.strong .alert-k{
+    display:inline-block;
+    margin:0 5px 2px 0;
+    padding:1px 10px 2px;
+    border-radius:8px;
+    border:2px solid rgba(255,214,136,.95);
+    background:linear-gradient(180deg,rgba(255,210,124,.34),rgba(255,190,82,.14));
+    font-weight:800;
+    letter-spacing:.3px;
+    line-height:1.5;
+    color:#fff1ce;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,238,196,.18),
+        0 0 0 3px rgba(255,199,95,.13),
+        0 0 20px rgba(238,181,78,.45);
+}
+
+/* 小标题标签：独占一行，正文另起一段 */
+.lead-label{
+    display:inline-block;
+    margin-right:8px;
+    padding:3px 11px 4px;
+    border-radius:8px;
+    font-size:13.5px;
+    font-weight:700;
+    line-height:1.5;
+    color:#ffe8b4;
+    background:rgba(231,192,106,.14);
+    border:1px solid rgba(231,192,106,.24);
+}
+.card p.lead-row{
+    margin:17px 0 6px;
+    line-height:1.5;
+}
+.card p.lead-row:first-of-type{margin-top:0}
+.card p.lead-body{margin:0}
+
+/* ---------- 小项（卡片里的一段）之间的分隔 ---------- */
+.card .it + .it{
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px solid rgba(150,172,212,.19);
+}
+/* 光有一个小标题、正文在下一项：让它贴住下面的正文，不要被线切断 */
+.card .it.it-lead + .it{
+    margin-top:7px;
+    padding-top:0;
+    border-top:0;
+}
+.card .it > :first-child{margin-top:0}
+.card .it > :last-child{margin-bottom:0}
+
+/* ---------- 小项配图 ---------- */
+.figs{
+    /* --ar 由 PHP 按图片真实宽高比写进来；1 张图就用它自己的比例，多张用这组的中位比例 */
+    --ar:0.75;
+    display:grid;gap:9px;
+    margin:14px 0 4px;
+    grid-template-columns:repeat(auto-fit,minmax(148px,1fr));
+}
+.figs[data-n="1"]{grid-template-columns:minmax(0,1fr)}
+.figs[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.figs[data-n="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.figs[data-n="4"]{grid-template-columns:repeat(4,minmax(0,1fr))}
+.figs[data-n="5"],.figs[data-n="6"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+.figs[data-n="7"],.figs[data-n="8"],.figs[data-n="9"]{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fig{
+    position:relative;display:block;overflow:hidden;
+    aspect-ratio:var(--ar);
+    border-radius:12px;
+    border:1px solid rgba(150,172,212,.28);
+    background:rgba(255,255,255,.055);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+    cursor:zoom-in;
+    -webkit-tap-highlight-color:transparent;
+    transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease;
+}
+.fig img{
+    display:block;width:100%;height:100%;
+    object-fit:contain;
+    /* 多张图统一高度：按格子比例裁切填满，保证整齐；单张图按原比例，不会留黑边 */
+    /* 允许系统在长按时弹出「保存图片 / 复制图片」 */
+    -webkit-touch-callout:default;
+    -webkit-user-select:auto;user-select:auto;
+    transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+/* 单张：按原图比例，铺满不裁；多张：同一格子比例裁切，视觉才整齐 */
+.figs[data-n="1"] .fig img{object-fit:contain}
+.figs:not([data-n="1"]) .fig img{object-fit:cover;object-position:center}
+@media (hover:hover) and (pointer:fine){
+    .fig:hover{
+        border-color:rgba(231,192,106,.42);
+        box-shadow:0 18px 38px -24px rgba(0,0,0,.95),0 0 0 1px rgba(231,192,106,.14);
+        transform:translateY(-1px);
+    }
+    .fig:hover img{transform:scale(1.05)}
+}
+.fig:focus-visible{outline:2px solid rgba(231,192,106,.7);outline-offset:2px}
+
+/* ---------- 大图查看（灯箱） ---------- */
+.lb{
+    position:fixed;inset:0;z-index:99;
+    display:flex;align-items:center;justify-content:center;
+    padding:clamp(10px,3.4vw,44px);
+    background:rgba(4,7,13,.94);
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    overscroll-behavior:contain;
+    touch-action:none;
+    /* 用 opacity + visibility 做进出场，display 切换会让过渡失效 */
+    opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .28s ease,visibility 0s linear .28s;
+}
+.lb.on{
+    opacity:1;visibility:visible;pointer-events:auto;
+    transition:opacity .3s ease,visibility 0s linear 0s;
+}
+.lb-stage{
+    position:relative;
+    flex:1 1 auto;
+    min-width:0;min-height:0;
+    display:flex;align-items:center;justify-content:center;
+    width:100%;height:100%;
+    touch-action:none;
+    cursor:grab;
+}
+.lb-stage.drag{cursor:grabbing}
+/* 两层图片叠放：换图时新图淡入、旧图淡出，中间不会闪白 */
+.lb-i{
+    position:absolute;inset:0;margin:auto;
+    max-width:100%;max-height:100%;
+    object-fit:contain;
+    border-radius:12px;
+    background:#0b1220;
+    box-shadow:0 44px 96px -44px #000;
+    opacity:0;
+    /* 允许长按唤出系统的「保存图片 / 转发」菜单；最上层由 JS 打开 pointer-events */
+    -webkit-user-select:auto;user-select:auto;
+    -webkit-user-drag:none;
+    -webkit-touch-callout:default;
+    pointer-events:none;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    will-change:transform,opacity;
+    transition:opacity .32s ease,transform .44s cubic-bezier(.22,1,.36,1);
+}
+/* 拖拽跟手：这一瞬间不能有过渡 */
+.lb-stage.drag .lb-i{transition:none}
+.lb-x,.lb-p,.lb-n{
+    position:absolute;z-index:2;
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;padding:0;
+    border:1px solid rgba(150,172,212,.22);
+    border-radius:50%;
+    color:#eaf1ff;font-size:20px;line-height:1;font-family:inherit;
+    background:rgba(255,255,255,.09);
+    -webkit-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
+    cursor:pointer;
+    transition:background .2s ease,border-color .2s ease,transform .12s ease,opacity .2s ease;
+}
+.lb-x:hover,.lb-p:hover,.lb-n:hover{background:rgba(255,255,255,.17);border-color:rgba(231,192,106,.5)}
+.lb-x:active,.lb-p:active,.lb-n:active{transform:scale(.94)}
+/* 到头那一侧的箭头变暗（仍可点，点了会提示） */
+.lb-p.off,.lb-n.off{opacity:.26}
+.lb-p.off:hover,.lb-n.off:hover{opacity:.5}
+.lb-x{top:14px;right:14px;font-size:22px}
+.lb-p{left:14px;top:50%;margin-top:-20px}
+.lb-n{right:14px;top:50%;margin-top:-20px}
+.lb-c{
+    position:absolute;left:50%;bottom:16px;transform:translateX(-50%);
+    padding:4px 14px;border-radius:999px;
+    font-size:12px;font-weight:600;letter-spacing:.6px;
+    color:#d6e2f4;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(150,172,212,.24);
+    font-variant-numeric:tabular-nums;
+}
+/* 到头的文字提醒（底部弹出，不挡图） */
+.lb-t{
+    position:absolute;left:50%;bottom:62px;z-index:3;
+    transform:translate(-50%,8px) scale(.96);
+    padding:9px 20px;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:.5px;
+    color:#fff3d8;white-space:nowrap;
+    background:rgba(16,22,35,.92);
+    border:1px solid rgba(231,192,106,.45);
+    box-shadow:0 16px 38px -18px #000,0 0 0 4px rgba(231,192,106,.08);
+    opacity:0;pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease;
+}
+.lb-t.on{opacity:1;transform:translate(-50%,0) scale(1)}
+/* 打开时的一句操作提示（顶部，避开右上角关闭） */
+.lb-hint{
+    position:absolute;left:50%;top:16px;transform:translateX(-50%);
+    padding:6px 15px;border-radius:999px;
+    font-size:12.5px;letter-spacing:.4px;
+    color:#c3d1e8;white-space:nowrap;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(150,172,212,.18);
+    opacity:0;pointer-events:none;
+    transition:opacity .3s ease;
+}
+.lb-hint.on{opacity:1}
+
+/* ---------- 移动端 ---------- */
+@media (max-width:640px){
+    body{padding:18px 10px 26px}
+    .hero{padding:20px 2px 20px}
+    .top-title{letter-spacing:.2px}
+    .hero-meta{gap:8px;margin-top:13px}
+    .sub-title{font-size:12px;padding:4px 12px}
+    .upd{font-size:11.5px;padding:5px 10px 5px 9px;gap:5px}
+    .cards{gap:24px;margin-top:8px}
+    .card{padding:18px 16px 20px;border-radius:16px}
+    .card::after{left:16px;right:16px}
+    .card .it + .it{margin-top:14px;padding-top:14px}
+    .card::before{left:16px;width:42px}
+    .card.closed{padding-top:11px;padding-bottom:12px}
+    .card-hd{gap:10px}
+    .card-cv{width:29px;height:29px}
+    .card-cv svg{width:13px;height:13px}
+    .card-hd::before{inset:-8px -9px;border-radius:13px}
+    .card h3{font-size:16px;padding-left:12px;margin-bottom:11px}
+    .card h3::before{width:2.5px}
+    .card h3.t-label{font-size:15.5px;padding:5px 13px 6px;margin-bottom:12px;border-radius:10px}
+    .card h3.t-bar{font-size:16.5px;padding:11px 13px 12px;margin-bottom:14px;border-radius:12px;letter-spacing:.3px}
+    .card h3.t-plain{padding-left:0}
+    .card p{font-size:14.5px;line-height:1.88}
+    .card p.head{font-size:14px;margin-top:18px}
+    .card p.strong{padding:12px 13px 13px 35px;font-size:14.5px;border-radius:12px;margin:15px 0 4px}
+    .card p.strong::before{left:10px;top:11px;width:18px;height:18px;font-size:11.5px}
+    .card p.strong .alert-k{padding:1px 8px 2px;margin-right:4px;border-width:1.2px}
+    .lead-label{font-size:13px;padding:2px 9px 3px}
+    .card p.lead-row{margin:15px 0 5px}
+    .figs{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:12px}
+    /* 手机上单张图铺满宽度，不再缩成 240px 的小方块 */
+    .figs[data-n="1"]{grid-template-columns:minmax(0,1fr)}
+    .figs[data-n="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+    /* 4 张以上在手机上最多 3 列，格子才看得清 */
+    .figs[data-n="4"],.figs[data-n="5"],.figs[data-n="6"],
+    .figs[data-n="7"],.figs[data-n="8"],.figs[data-n="9"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .fig{border-radius:10px}
+    .lb{border-radius:0;padding:10px 8px}
+    .lb-i{border-radius:8px}
+    .lb-x{top:8px;right:8px;width:34px;height:34px;font-size:19px}
+    .lb-p,.lb-n{width:34px;height:34px;font-size:17px;margin-top:-17px}
+    .lb-p{left:6px}
+    .lb-n{right:6px}
+    .lb-c{bottom:10px;font-size:11px}
+    .lb-t{bottom:52px;font-size:12.5px;padding:8px 16px}
+    .lb-hint{top:10px;font-size:12px;padding:5px 13px}
+}
+/* 窄屏：日期保持一行，隐藏"更新于"三字给日期让位 */
+@media (max-width:400px){
+    .upd{padding:5px 9px 5px 8px;gap:5px;letter-spacing:0}
+    .upd i{display:none}
+}
+@media (max-width:340px){
+    .upd{font-size:11px;padding:4px 8px 4px 7px}
+    .sub-title{font-size:11.5px;padding:3px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+    .card{animation:none}
+    .upd::before{animation:none}
+    .card p.strong{animation:none}
+    .card p.strong::before{animation:none}
+    .fig,.fig img{transition:none}
+    .card-bd{transition:none}
+    .card-in{transition:none}
+    .card-cv{transition:none}
+    .lb,.lb.on{transition:none}
+    .lb-i,.lb-t{transition:none}
+}
+</style>
+<noscript><style>.card.closed .card-bd{height:auto}.card-in{opacity:1;transform:none}.card-cv{display:none}</style></noscript>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<h1 class="top-title">🌐 共赢联盟⚡️老林（全国） 🌐</h1>
+<div class="hero-meta">
+<span class="sub-title">👉务必收藏保存，合作产品实时更新</span>
+<span class="upd" title="页面内容最近更新：2026-11-16 15:02:28"><i>更新于</i><b>2026.11.16 15:02</b></span>
+</div>
+<div class="wx" data-wx="ZJJB1888"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.9c-4.5 0-8.2 3-8.2 6.8 0 2.2 1.2 4.1 3.1 5.4l-.8 2.6 3-1.4c.9.3 1.9.4 2.9.4 4.5 0 8.2-3 8.2-6.8S16.5 3.9 12 3.9Z"/><circle cx="9" cy="10.4" r="1.05"/><circle cx="12.1" cy="10.4" r="1.05"/><circle cx="15.2" cy="10.4" r="1.05"/></svg><span class="wx-l">微信号</span><b class="wx-n">ZJJB1888</b><button class="wx-c" type="button" aria-label="复制微信号">复制</button></div><div class="wx-tip">加老林微信咨询合作共赢</div><script>
+(function () {
+  var box = document.querySelector('.wx[data-wx]');
+  if (!box) return;
+  var btn = box.querySelector('.wx-c');
+  var id  = box.getAttribute('data-wx') || '';
+  var tmr = null;
+
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(t);
+    }
+    return new Promise(function (res, rej) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = t;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, t.length);
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? res() : rej(new Error('copy'));
+      } catch (e) { rej(e); }
+    });
+  }
+  function flash(txt, ok) {
+    btn.textContent = txt;
+    if (ok) btn.classList.add('ok');
+    clearTimeout(tmr);
+    tmr = setTimeout(function () {
+      btn.textContent = '复制';
+      btn.classList.remove('ok');
+    }, 1900);
+  }
+
+  btn.addEventListener('click', function () {
+    copyText(id).then(function () { flash('已复制', true); })
+                 .catch(function () { flash('长按号码复制', false); });
+  });
+  /* 号码本身也能点 */
+  var num = box.querySelector('.wx-n');
+  if (num) {
+    num.addEventListener('click', function () {
+      if (window.getSelection) {
+        var r = document.createRange();
+        r.selectNodeContents(num);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+      }
+    });
+  }
+})();
+</script></header>
+<main class="cards">
+<section class="card foldable open-first" style="animation-delay:0ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="true"><h3 class="t-label">老林全国线上一手源头业务</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="head">① 公积金客户群体:各大银行内部名单加白办理，全国各地都可做！<br>
+② 工行，农行，建行，大额网贷，出额，强提，回捞，解码，提额，复刻，续贷！<br>
+③ 无本续贷，全国各地可做，不限银行，不限产品，消费贷，经营贷，公积金贷，抵押贷，企业贷都可以安排处理！<br>
+④ 交通银行，公积金贷，本科学历贷，商户贷，出额，降息，改还款方式，全国各地可做！<br>
+⑤ 浦发银行，中信银行，兴业银行，邮政银行，招商银行，中国银行，网商银行，微众银行等业务办理专属二维码白名单进件通道！<br>
+⑥ 小微企业，个体工商户，线上税票贷，商户贷等加白办理通道</p>
+<div class="figs" data-n="4" style="--ar:0.563"><a class="fig" href="media/lin/20261115-233637-b45eb80f.jpg" aria-label="查看大图"><img src="media/lin/20261115-233637-b45eb80f.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-233719-488cdaa7.jpg" aria-label="查看大图"><img src="media/lin/20261115-233719-488cdaa7.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-233754-98a838a9.jpg" aria-label="查看大图"><img src="media/lin/20261115-233754-98a838a9.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-233754-89a10a0c.jpg" aria-label="查看大图"><img src="media/lin/20261115-233754-89a10a0c.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:45ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-label">一、公积金、社保、打卡工资、按揭房贷、大额网贷</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="strong">全国各地都可接单<br>
+     工行、农业、中行、浙商、邮储、邮储跟随贷、建行、交通、兴业、招商、浦发等等，基本上所有银行产品，专属内部白名单进件码，一客一码，通过率高，先息后本/等额本息两种还款方式灵活选择！<br>
+      优势:纯线上办理，10-30分钟当场下款，单个产品最高授信100万  最低年化利率3%起！<br>
+  <br>
+欢迎全国各地大佬咨询老林对接合作共赢！！</p>
+<div class="figs" data-n="4" style="--ar:0.563"><a class="fig" href="media/lin/20261114-091822-8186426f.jpg" aria-label="查看大图"><img src="media/lin/20261114-091822-8186426f.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-091828-2014b499.jpg" aria-label="查看大图"><img src="media/lin/20261114-091828-2014b499.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092336-fc965519.jpg" aria-label="查看大图"><img src="media/lin/20261114-092336-fc965519.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092336-6900b381.jpg" aria-label="查看大图"><img src="media/lin/20261114-092336-6900b381.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:90ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-bar">二、各种错误代码破解</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="lead-row"><span class="lead-label">⦿ ▶ 工行类 经营快贷 融e借 助商组合贷：</span></p>
+<p class="lead-body">①  经营快贷全系列疑难杂症:有额度提不出来的，提款跳错误代码的，提款拒绝后台显示刚控的，柔控的，反欺诈的，额度被回收的，无可认证方式的，暂不具备办理条件的，无可信手机的，提示上传身份证联系客户资经理的，经营快贷放款后贷款资金被冻结的，贷款资金转不出去的，贷款资金在卡里但是可用额度不显示的。续贷不通过，续贷显示银行审核的，续贷显示暂不符合办理条件的，提款跳所有错误代码的！只要是经营快贷全系列疑难杂症，都可以找老林咨询处理，全国独家核心技术破解，一手源头行口配合处理，超级稳！！<br>
+②  融e借疑难杂症:有额度提不出来的，资信状况未通过的，禁闭期的，点马上借提示待视频面谈的，提款后显示处理中的，提款后显示待放款的，出额申请后短信通过，手机银行显示没额度或者未通过的可回捞，提示该地区未开放的可安排解决，点马上借一直点不进去，马上借显示灰色的可解决，提款时显示2800代码可解决，提款时提示暂无认证方式可解决！贷款即将到期可安排无本续贷！<br>
+③  助商组合贷:可添加白名单申请出额放款！提款失败可安排强提，提款跳错误代码可安排解码，贷款到期可安排无本续贷！</p>
+<div class="figs" data-n="17" style="--ar:0.723"><a class="fig" href="media/lin/20261114-092013-7c8c598c.jpg" aria-label="查看大图"><img src="media/lin/20261114-092013-7c8c598c.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092013-cb5f7ca1.jpg" aria-label="查看大图"><img src="media/lin/20261114-092013-cb5f7ca1.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092013-9c686add.jpg" aria-label="查看大图"><img src="media/lin/20261114-092013-9c686add.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092013-e7aa0ca3.jpg" aria-label="查看大图"><img src="media/lin/20261114-092013-e7aa0ca3.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092014-dfabf422.jpg" aria-label="查看大图"><img src="media/lin/20261114-092014-dfabf422.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092014-52ab6d20.jpg" aria-label="查看大图"><img src="media/lin/20261114-092014-52ab6d20.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092017-0d43c1e4.jpg" aria-label="查看大图"><img src="media/lin/20261114-092017-0d43c1e4.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092018-286b28cb.jpg" aria-label="查看大图"><img src="media/lin/20261114-092018-286b28cb.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261114-092018-14f156d4.jpg" aria-label="查看大图"><img src="media/lin/20261114-092018-14f156d4.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235800-49228374.jpg" aria-label="查看大图"><img src="media/lin/20261115-235800-49228374.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235801-7a7d9a39.jpg" aria-label="查看大图"><img src="media/lin/20261115-235801-7a7d9a39.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235831-9a1a2269.jpg" aria-label="查看大图"><img src="media/lin/20261115-235831-9a1a2269.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235832-7740db5f.jpg" aria-label="查看大图"><img src="media/lin/20261115-235832-7740db5f.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235832-443ebb90.jpg" aria-label="查看大图"><img src="media/lin/20261115-235832-443ebb90.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235832-3a09e643.jpg" aria-label="查看大图"><img src="media/lin/20261115-235832-3a09e643.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235833-d7df0c5c.jpg" aria-label="查看大图"><img src="media/lin/20261115-235833-d7df0c5c.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261115-235834-e40e65b0.jpg" aria-label="查看大图"><img src="media/lin/20261115-235834-e40e65b0.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+<div class="it"><p class="lead-row"><span class="lead-label">建设银行  错误代码解码：</span></p>
+<p class="lead-body">①  建行，快贷SJD134代码解除<br>
+错误代码，暂无额度SJD134.YRCA0992KDSQ<br>
+代码解除，一手行口，全国处理✅<br>
+②  建行 快贷/房易贷/建易贷/惠懂你等，代码解除，快到期无本续贷</p>
+<div class="figs" data-n="1" style="--ar:0.563"><a class="fig" href="media/lin/20261116-145725-02621036.jpg" aria-label="查看大图"><img src="media/lin/20261116-145725-02621036.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+<div class="it"><p class="lead-row"><span class="lead-label">农业银行 错误代码解码：</span></p>
+<p class="lead-body">农行 错误代码<br>
+申请 签约 用款 续贷时<br>
+各环节代码，疑难杂证，均可处理<br>
+不仅限以下图片代码，全国收</p>
+<div class="figs" data-n="4" style="--ar:0.75"><a class="fig" href="media/lin/20261116-145749-1fea0f2e.jpg" aria-label="查看大图"><img src="media/lin/20261116-145749-1fea0f2e.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261116-145749-eb6449c9.jpg" aria-label="查看大图"><img src="media/lin/20261116-145749-eb6449c9.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261116-145749-ae504889.jpg" aria-label="查看大图"><img src="media/lin/20261116-145749-ae504889.jpg" alt="" loading="lazy" decoding="async"></a><a class="fig" href="media/lin/20261116-145749-47931a19.jpg" aria-label="查看大图"><img src="media/lin/20261116-145749-47931a19.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+<div class="it"><p class="strong"><b class="alert-k">注意⚠️⚠️⚠️：</b>解码类业务需要看具体报错代码和客户具体实际情况判断，大多部分情况可秒解，一小部分需要方案解或者需要客户经理配合的会提前告知，欢迎全国各大渠道咨询老林合作。</p>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:135ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-bar">三、无还本续贷</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="lead-row"><span class="lead-label">☉▶ 各大银行先息后本贷款无本续贷：</span></p>
+<p class="lead-body">消费贷，农户贷，经营贷，抵押贷，企业贷等只要快到期的，都可以无本续贷，目前件均成功率90%+<br>
+✔️不限银行，不限产品，不限地区<br>
+✔️只要是先息后本的。都可以操作<br>
+✔️建议快到期前15天或一个月以上就可以安排续贷了</p>
+<div class="figs" data-n="1" style="--ar:0.75"><a class="fig" href="media/lin/20261114-092247-8321ea3e.jpg" aria-label="查看大图"><img src="media/lin/20261114-092247-8321ea3e.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+<div class="it"><p>中行、农行、交行、中信、建行、工行、邮政、浦发、招商、广发、农商行、城商行等等，一切先息后本的产品都可以办理！</p>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:180ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-label">四、学历贷</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="lead-row"><span class="lead-label">本科毕业生（学历贷）：</span></p>
+<p class="lead-body">全日制本科及以上（专升本的全日制也可以），20-30岁，测额，降息，改先息后本，预审批回捞，全程线上搞定</p>
+<div class="figs" data-n="1" style="--ar:0.681"><a class="fig" href="media/lin/20261114-091347-0c6bd27c.jpg" aria-label="查看大图"><img src="media/lin/20261114-091347-0c6bd27c.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:225ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-label">五、税/票/对公类</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p>建行发票贷提额，全国可安排！</p>
+<div class="figs" data-n="1" style="--ar:0.791"><a class="fig" href="media/lin/20261114-092454-307b551e.jpg" aria-label="查看大图"><img src="media/lin/20261114-092454-307b551e.jpg" alt="" loading="lazy" decoding="async"></a></div>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:270ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3 class="t-label">六、商品回收类</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="lead-row"><span class="lead-label">常见平台：</span></p>
+<p class="lead-body">京东、淘宝、抖音、美团、月付、分付，花呗等</p>
+</div>
+</div></div>
+</section>
+<section class="card foldable closed" style="animation-delay:315ms">
+<div class="card-hd" role="button" tabindex="0" aria-expanded="false"><h3>⚠️郑重声明⚠️:</h3><i class="card-cv" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.2 5.6 16 12l-6.8 6.4"/></svg></i></div>
+<div class="card-bd"><div class="card-in"><div class="it"><p class="strong"><b class="alert-k">温馨提醒：</b>所有合作渠道，一定要如实告知客户所申请产品的息费、额度、还款方式、使用周期等相关问题，切勿夸大宣传、过度承诺或者隐瞒实情。以上业务均为老林一手实操/一手产品渠道资源，欢迎各大渠道长期合作，互利共赢！</p>
+</div>
+</div></div>
+</section>
+</main>
+<footer class="pfoot" data-p="lin">
+  <span class="pf-i pf-vi">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.9 12S5.5 5.6 12 5.6 22.1 12 22.1 12 18.5 18.4 12 18.4 1.9 12 1.9 12Z"/><circle cx="12" cy="12" r="2.9"/></svg>
+    <span>浏览</span><b data-v>—</b>
+  </span>
+  <button class="pf-i pf-add" type="button" id="pfAdd" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.2v10.4M8.1 11l3.9 3.9 3.9-3.9M5 16.4v2.2a1.2 1.2 0 0 0 1.2 1.2h11.6A1.2 1.2 0 0 0 19 18.6v-2.2"/></svg>
+    <span class="pf-add-t">添加到桌面</span>
+  </button>
+</footer>
+<div class="pinst" id="pfInst" hidden>
+  <div class="pinst-mask" data-x="1"></div>
+  <div class="pinst-box" role="dialog" aria-label="添加到桌面">
+    <button class="pinst-x" type="button" data-x="1" aria-label="关闭">✕</button>
+    <h4><span id="pfInstT">添加到手机桌面</span></h4>
+    <div id="pfInstBody"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var foot = document.querySelector('.pfoot[data-p]');
+  if (!foot) return;
+  var page  = foot.getAttribute('data-p');
+  var vB    = foot.querySelector('b[data-v]');
+  var addB  = document.getElementById('pfAdd');
+  var addT  = addB ? addB.querySelector('.pf-add-t') : null;
+  var inst  = document.getElementById('pfInst');
+  var iBody = document.getElementById('pfInstBody');
+  var iTitle= document.getElementById('pfInstT');
+  var store = 'fxst:' + page;
+
+  function fmt(n) {
+    n = parseInt(n, 10);
+    if (!(n > 0)) n = 0;
+    return n.toLocaleString('zh-CN');
+  }
+  function set(el, n) {
+    var v = fmt(n);
+    if (el.textContent === v) return;
+    el.textContent = v;
+    var p = el.parentNode;
+    p.classList.remove('up');
+    void p.offsetWidth;
+    p.classList.add('up');
+    setTimeout(function () { p.classList.remove('up'); }, 950);
+  }
+
+  /* 先贴上一次的数字，避免打开瞬间是"—" */
+  try {
+    var c = JSON.parse(localStorage.getItem(store) || 'null');
+    if (c && c.v != null) vB.textContent = fmt(c.v);
+  } catch (e) {}
+
+  /* 每打开 / 刷新一次记一次浏览 */
+  var fd = new FormData();
+  fd.append('a', 'view');
+  fd.append('p', page);
+  fetch('/stats.php', {
+    method: 'POST', body: fd, credentials: 'same-origin', cache: 'no-store'
+  }).then(function (r) { return r.json(); }).then(function (j) {
+    if (!j || !j.ok) return;
+    set(vB, j.views);
+    try { localStorage.setItem(store, JSON.stringify({v: j.views})); } catch (e) {}
+  }).catch(function () {});
+
+  /* ---------- 添加到手机桌面 ---------- */
+  var ua    = navigator.userAgent;
+  var iOS   = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var wechat= /MicroMessenger/i.test(ua);
+  var qqIn  = /\sQQ\//i.test(ua) && !/MQQBrowser/i.test(ua);
+  var weibo = /Weibo/i.test(ua);
+  var inApp = wechat || qqIn || weibo || /AlipayClient|DingTalk|Lark|Feishu|baiduboxapp/i.test(ua);
+  var isSafari = /Safari/i.test(ua) && !/CriOS|FxiOS|EdgiOS|Chrome|Android/i.test(ua);
+  var stand = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  var promptEv = null;
+
+  /* 各浏览器的「添加」入口不一样，按 UA 认出来，给准确位置而不是泛泛的流程 */
+  function detectBrowser() {
+    var t = [
+      ['edge',     /EdgA|Edg\/|EdgiOS/i],
+      ['samsung',  /SamsungBrowser/i],
+      ['opera',    /OPR\/|Opera Mini|Opera Mobi/i],
+      ['firefox',  /Firefox|FxiOS/i],
+      ['uc',       /UCBrowser|UCWEB/i],
+      ['qq',       /MQQBrowser|QQBrowser/i],
+      ['quark',    /Quark/i],
+      ['baidu',    /baidubrowser|BIDUBrowser/i],
+      ['miui',     /MiuiBrowser|XiaoMi/i],
+      ['huawei',   /HuaweiBrowser|HBPC/i],
+      ['vivo',     /VivoBrowser/i],
+      ['oppo',     /HeyTapBrowser|OppoBrowser/i],
+      ['chrome',   /Chrome|CriOS/i],
+      ['safari',   /Safari/i]
+    ];
+    for (var i = 0; i < t.length; i++) if (t[i][1].test(ua)) return t[i][0];
+    return 'other';
+  }
+  var BRO = detectBrowser();
+
+  /* 菜单入口：slot = 图里点亮哪一格（tr 右上 / bc 底部中间 / br 右下）。
+     只在核实过的浏览器上写死路径，其余给两条候选，别装懂。 */
+  var GUIDE = {
+    chrome:   { n:'Chrome',     slot:'tr', ico:'⋮', cap:'点右上角这个 ⋮',
+                steps:['选「添加到主屏幕」','点「添加」'] },
+    edge:     { n:'Edge',       slot:'bc', ico:'⋯', cap:'点底部中间这个 ⋯',
+                steps:['选「添加到手机」','点「添加」'] },
+    samsung:  { n:'三星浏览器',  slot:'br', ico:'≡', cap:'点右下角这个 ≡',
+                steps:['选「添加页面到」','再点「主屏幕」'] },
+    opera:    { n:'Opera',      slot:'br', ico:'⋮', cap:'点右下角这个 ⋮',
+                steps:['选「添加到主屏幕」'] },
+    firefox:  { n:'Firefox',    slot:'tr', ico:'⋮', cap:'点右上角这个 ⋮',
+                steps:['选「添加到主屏幕」','点「添加」'] },
+    qq:       { n:'QQ 浏览器',   slot:'br', ico:'≡', cap:'点右下角这个 ≡',
+                steps:['选「工具箱」','点「添加快捷方式」','选「手机桌面」，点确定'] },
+    uc:       { n:'UC 浏览器',   slot:'tr', ico:'⋮', cap:'点右上角这个 ⋮',
+                steps:['选「添加到桌面」'],
+                alt:'有的版本这个按钮在底部中间，是个 ≡。' },
+    quark:    { n:'夸克',        slot:'tr', ico:'⋯', cap:'点右上角这个 ⋯',
+                steps:['选「添加到桌面」'] },
+    miui:     { n:'小米浏览器',  slot:'br', ico:'⋮', cap:'点右下角这个 ⋮',
+                steps:['选「添加到桌面」','点「立即添加」'] },
+    huawei:   { n:'华为浏览器',  slot:'br', ico:'≡', cap:'点右下角这个 ≡',
+                steps:['选「添加到桌面」'] },
+    oppo:     { n:'OPPO 浏览器', slot:'br', ico:'≡', cap:'点右下角这个 ≡',
+                steps:['选「添加快捷方式」'] },
+    vivo:     { n:'vivo 浏览器', slot:'br', ico:'≡', cap:'点右下角这个 ≡',
+                steps:['选「添加到桌面」'] },
+    other:    { n:'当前浏览器',  slot:'br', ico:'≡', cap:'点右下角这个 ≡（也可能在右上角，是个 ⋮）',
+                steps:['选「添加到桌面」或「添加到主屏幕」'] }
+  };
+  var CHROMIUM = /chrome|edge|samsung|opera/.test(BRO);
+
+  function ready(on) { if (addB) addB.hidden = !on; }
+  function one(on) {
+    if (!addB) return;
+    addB.classList.toggle('one', !!on);
+    addT.textContent = on ? '一键添加到桌面' : '添加到桌面';
+  }
+
+  function tip(title, html, mod) {
+    iTitle.textContent = title;
+    iBody.innerHTML = html;
+    inst.className = 'pinst' + (mod ? ' ' + mod : '');
+    inst.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeTip() {
+    inst.hidden = true;
+    document.documentElement.style.overflow = '';
+  }
+  inst.addEventListener('click', function (e) {
+    if (e.target.closest('[data-x]')) closeTip();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !inst.hidden) closeTip();
+  });
+
+  /* 安卓 Chrome / Edge 等：系统安装事件，点了直接弹原生「安装」框 */
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault();
+    promptEv = e;
+    if (!stand) { ready(true); one(true); }
+  });
+  window.addEventListener('appinstalled', function () {
+    ready(false);
+    closeTip();
+  });
+
+  if (stand) {
+    ready(false);
+  } else {
+    ready(true);
+    one(false);
+  }
+
+  function doPrompt() {
+    if (!promptEv) return false;
+    var ev = promptEv;
+    promptEv = null;
+    ev.prompt();
+    ev.userChoice && ev.userChoice.then(function () {
+      one(false);
+    });
+    return true;
+  }
+
+  function fallback() {
+    /* 微信 / QQ 等内置浏览器：只能先换浏览器 */
+    if (inApp) {
+      tip('请先在浏览器打开', ''
+        + '<p>微信、QQ 里不能直接添加桌面图标，换成浏览器就好。</p>'
+        + '<ol class="pst">'
+        + '<li><b>1</b><span>点右上角 <em>···</em></span></li>'
+        + '<li><b>2</b><span>选「在浏览器打开」</span></li>'
+        + '<li><b>3</b><span>回到本页，再点一次「添加到桌面」</span></li>'
+        + '</ol>');
+      return;
+    }
+    /* iPhone / iPad：Safari 只能手动加两步 */
+    if (iOS) {
+      if (isSafari) {
+        tip('添加到 iPhone 桌面', ''
+          + '<p class="plead">就两步，跟着下面这条工具栏点：</p>'
+          + '<div class="pbar">'
+          + '<span></span><span></span>'
+          + '<b class="on"><svg viewBox="0 0 24 24"><path d="M12 3.6v10.2M8.6 6.4 12 3l3.4 3.4M6 12.2v5.6a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5v-5.6"/></svg></b>'
+          + '<span></span><span></span>'
+          + '</div>'
+          + '<p class="pbart">↑ 金色那颗就是「分享」，在屏幕最底下的工具栏中间</p>'
+          + '<ol class="pst pst2">'
+          + '<li><b>1</b><span>点它，弹出菜单</span></li>'
+          + '<li><b>2</b><span>向上滑，点 <em>添加到主屏幕</em> → 右上角 <em>添加</em></span></li>'
+          + '</ol>',
+          't-ios');
+      } else {
+        tip('改用 Safari 打开', ''
+          + '<p>iPhone 上只有 <em>Safari</em> 能把网页装到桌面，别的浏览器都不行。</p>'
+          + '<ol class="pst pst2">'
+          + '<li><b>1</b><span>点下面的按钮，复制本页网址</span></li>'
+          + '<li><b>2</b><span>打开 Safari 粘进去，再点底部 <em>分享</em> → 「添加到主屏幕」</span></li>'
+          + '</ol>'
+          + '<button class="pcopy" type="button" id="pfCopy" data-done="已复制，去 Safari 粘贴">复制本页网址</button>',
+          't-ios');
+      }
+      return;
+    }
+    /* 其它手机浏览器：画图指出菜单按钮在哪，再给菜单项名字 */
+    var g = GUIDE[BRO] || GUIDE.other;
+    var icTr = g.slot === 'tr' ? g.ico : '⋮';
+    var icBc = g.slot === 'bc' ? g.ico : '⋯';
+    var icBr = g.slot === 'br' ? g.ico : '≡';
+    var steps = '';
+    for (var i = 0; i < g.steps.length; i++) {
+      steps += '<li><b>' + (i + 1) + '</b><span>' + g.steps[i] + '</span></li>';
+    }
+    tip('添加到桌面 · ' + g.n, ''
+      + '<div class="pnav">'
+      + '<i class="pt"><b class="mg' + (g.slot === 'tr' ? ' on' : '') + '">' + icTr + '</b></i>'
+      + '<span class="pm">当前网页</span>'
+      + '<i class="pb"><u></u>'
+      + '<b class="mg' + (g.slot === 'bc' ? ' on' : '') + '">' + icBc + '</b>'
+      + '<b class="mg' + (g.slot === 'br' ? ' on' : '') + '">' + icBr + '</b>'
+      + '</i></div>'
+      + '<p class="pnavcap">' + g.cap + '</p>'
+      + '<ol class="pst pst2">' + steps + '</ol>'
+      + (g.alt ? '<p class="pnote">' + g.alt + '</p>' : '')
+      + (CHROMIUM
+          ? '<p class="pnote">菜单里没有这一项，说明系统这轮没准备好，刷新一下页面再点。</p>'
+          : '<p class="pnote">找不到这个按钮？先 <button class="plink" id="pfCopy" data-done="已复制，去 Chrome 粘贴">复制网址</button>，用 Chrome 打开能一键装。</p>'));
+  }
+
+  if (addB) {
+    addB.addEventListener('click', function () {
+      /* 有系统安装事件 → 直接一键，全程不用选菜单 */
+      if (doPrompt()) return;
+
+      /* 没有的话，等一小会儿：SW 刚激活时安装事件常常晚一步到 */
+      addB.classList.add('busy');
+      addT.textContent = '准备中…';
+      setTimeout(function () {
+        addB.classList.remove('busy');
+        one(!!promptEv);
+        if (doPrompt()) return;
+        fallback();
+      }, (CHROMIUM && !iOS) ? 1200 : 150);
+    });
+  }
+
+  /* 复制网址（找不到菜单按钮 / iOS 非 Safari 时用） */
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(t);
+    }
+    return new Promise(function (res, rej) {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = t;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, t.length);
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? res() : rej(new Error('copy'));
+      } catch (err) { rej(err); }
+    });
+  }
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('#pfCopy')) return;
+    var url = location.href;
+    var b = document.getElementById('pfCopy');
+    var doneTxt = (b && b.getAttribute('data-done')) || '已复制';
+    copyText(url).then(function () {
+      if (b) { b.textContent = doneTxt; b.classList.add('ok'); }
+    }).catch(function () {
+      if (b) { b.textContent = '没复制成功，长按地址栏复制'; }
+    });
+  });
+
+  /* Service Worker：安卓 Chrome 靠它才认这个站点可安装（不缓存内容，永远是最新页） */
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function () {});
+  }
+})();
+</script></div>
+<script>
+(function () {
+  if (!document.querySelector('.card.foldable')) return;
+
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var EASE_OPEN = 'cubic-bezier(.22,1,.36,1)';
+  var EASE_CLOSE = 'cubic-bezier(.45,0,.55,1)';
+
+  function setOpen(card, open) {
+    var bd  = card.querySelector('.card-bd');
+    var inn = card.querySelector('.card-in');
+    var hd  = card.querySelector('.card-hd');
+    if (!bd || !inn || !hd) return;
+
+    /* 从"此刻的真实高度"起步：动画没跑完又点一次，也接着走，不会跳一下 */
+    var from = Math.max(0, Math.round(bd.getBoundingClientRect().height));
+    if (bd._fxA) { bd._fxA.cancel(); bd._fxA = null; }
+
+    /* 目标高度先量好（内容被裁切时，子元素仍保有真实布局高度） */
+    var to = open ? Math.max(1, inn.offsetHeight) : 0;
+
+    bd.style.height = from + 'px';
+    card.classList.toggle('closed', !open);
+    hd.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+    if (RM || !bd.animate) {
+      bd.style.height = open ? '' : '0px';
+      return;
+    }
+
+    bd.style.willChange = 'height';
+    var dur = open ? 460 : 330;
+    var a = bd.animate(
+      [{ height: from + 'px' }, { height: to + 'px' }],
+      { duration: dur, easing: open ? EASE_OPEN : EASE_CLOSE, fill: 'both' }
+    );
+    bd._fxA = a;
+    /* 收尾：把高度交还给 CSS，之后图片撑开、内容变长都不会被裁。
+       除了 finish 事件，再挂一个定时器兜底——后台标签页 / 特殊环境里 finish 可能不触发 */
+    var done = function () {
+      if (bd._fxA !== a) return;          /* 已被新的动画接管，别插手 */
+      bd._fxA = null;
+      bd.style.willChange = '';
+      bd.style.height = open ? '' : '0px';
+      a.cancel();
+    };
+    a.onfinish = done;
+    setTimeout(done, dur + 70);
+  }
+
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var hd = t.closest('.card-hd');
+    if (!hd) return;
+    if (t.closest('a,button')) return;
+    var card = hd.parentNode;
+    setOpen(card, card.classList.contains('closed'));
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    var el = document.activeElement;
+    if (!el || !el.classList || !el.classList.contains('card-hd')) return;
+    e.preventDefault();
+    var card = el.parentNode;
+    setOpen(card, card.classList.contains('closed'));
+  });
+})();
+</script><div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="图片查看">
+  <button class="lb-x" id="lbX" type="button" aria-label="关闭">✕</button>
+  <button class="lb-p" id="lbP" type="button" aria-label="上一张">‹</button>
+  <button class="lb-n" id="lbN" type="button" aria-label="下一张">›</button>
+  <div class="lb-stage" id="lbStage">
+    <img class="lb-i" id="lbImg" alt="">
+    <img class="lb-i" id="lbImg2" alt="" aria-hidden="true">
+  </div>
+  <div class="lb-t" id="lbT" aria-live="polite"></div>
+  <div class="lb-hint" id="lbHint"></div>
+  <div class="lb-c" id="lbC"></div>
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('lb');
+  if (!lb) return;
+  var stage = document.getElementById('lbStage');
+  var layers = [document.getElementById('lbImg'), document.getElementById('lbImg2')];
+  var cnt   = document.getElementById('lbC');
+  var pv    = document.getElementById('lbP');
+  var nx    = document.getElementById('lbN');
+  var tipEl = document.getElementById('lbT');
+  var hint  = document.getElementById('lbHint');
+
+  var list = [], ths = [], at = 0, front = 0;    /* ths：与 list 同序的缩略图，关闭时飞回当前那张 */
+  var tipTimer = 0, hintTimer = 0, lastDrag = 0;
+  var seq = 0, closing = false, origin = null;
+
+  var EASE_OUT  = 'cubic-bezier(.16,1,.3,1)';     /* 放大：先冲后缓，像弹出来 */
+  var EASE_IN   = 'cubic-bezier(.4,0,.75,.2)';    /* 收回：先缓后快，像被吸回去 */
+  var EASE_SWAP = 'cubic-bezier(.22,1,.36,1)';
+
+  function cur()   { return layers[front]; }
+  function other() { return layers[1 - front]; }
+
+  function tip(msg) {
+    if (!tipEl) return;
+    tipEl.textContent = msg;
+    tipEl.classList.add('on');
+    clearTimeout(tipTimer);
+    tipTimer = setTimeout(function () { tipEl.classList.remove('on'); }, 1700);
+  }
+
+  function meta() {
+    var n = list.length;
+    cnt.textContent = n > 1 ? (at + 1) + ' / ' + n : '';
+    if (n > 1) {
+      pv.style.display = '';
+      nx.style.display = '';
+      pv.classList.toggle('off', at === 0);
+      nx.classList.toggle('off', at === n - 1);
+    } else {
+      pv.style.display = 'none';
+      nx.style.display = 'none';
+    }
+  }
+
+  /* ---------- 缩放状态 ----------
+     缩放和平移单独记在元素上，最后和 FLIP / 滑动的 transform 拼在一起，
+     这样「打开、切图、关闭」的动画不会被缩放打断。 */
+  var ZMIN = 1, ZMAX = 4;
+
+  function tfOf(el) {
+    var z  = el._z  || 1;
+    var px = el._px || 0;
+    var py = el._py || 0;
+    /* 'none' 不能和 scale() 拼在一起（拼出来是非法值，整条被丢弃） */
+    var base = (el._base && el._base !== 'none') ? el._base : '';
+    if (z <= 1.001 && !px && !py) return base;
+    return (base ? base + ' ' : '')
+      + 'translate(' + px.toFixed(1) + 'px,' + py.toFixed(1) + 'px) scale(' + z.toFixed(3) + ')';
+  }
+  function setTf(el, v) {
+    if (!el) return;
+    el._base = v || '';
+    el.style.transform = tfOf(el);
+  }
+  function zReset(el) {
+    if (!el) return;
+    el._z = 1; el._px = 0; el._py = 0;
+  }
+  /* 把缩放限制在图片范围内，别拖到屏幕外面找不着 */
+  function zClampPan(el) {
+    var z = el._z || 1;
+    if (z <= 1.001) { el._px = 0; el._py = 0; return; }
+    var mx = (el.offsetWidth  * (z - 1)) / 2;
+    var my = (el.offsetHeight * (z - 1)) / 2;
+    el._px = Math.max(-mx, Math.min(mx, el._px));
+    el._py = Math.max(-my, Math.min(my, el._py));
+  }
+  /* 以屏幕上的某个点为中心缩放：那个点在屏幕上保持不动 */
+  function zAround(el, z, sx2, sy2) {
+    var z0 = el._z || 1;
+    var px0 = el._px || 0, py0 = el._py || 0;
+    var d0x = (sx2 - px0) / z0;
+    var d0y = (sy2 - py0) / z0;
+    el._z = z;
+    el._px = sx2 - d0x * z;
+    el._py = sy2 - d0y * z;
+    zClampPan(el);
+    el.style.transform = tfOf(el);
+  }
+
+  /* 位移（拖拽跟手）：只在 1 倍时用来切图，放大后改走平移 */
+  function shift(x) {
+    var el = cur();
+    if (!el) return;
+    if ((el._z || 1) > 1.001) { el.style.transform = tfOf(el); return; }
+    el._base = x ? 'translateX(' + x + 'px)' : '';
+    el.style.transform = tfOf(el);
+  }
+
+  /* 预加载相邻几张，切换时不用等图 */
+  function warm(i) {
+    if (i < 0 || i >= list.length || !list[i]) return;
+    var im = new Image();
+    im.src = list[i];
+  }
+
+  /* 清成"完全透明、无位移、无过渡"的干净状态 */
+  function flush(el) {
+    el.style.transition = 'none';
+    zReset(el);
+    setTf(el, '');
+    el.style.opacity = '0';
+    void el.offsetWidth;
+  }
+
+  /* 只有最上面那层能接收触摸：这样长按图片才能唤出系统的保存/转发菜单 */
+  function syncPtr() {
+    for (var i = 0; i < layers.length; i++) {
+      layers[i].style.pointerEvents = (i === front) ? 'auto' : 'none';
+    }
+  }
+
+  function open(href, box, thumb) {
+    list = [];
+    var as = box ? box.querySelectorAll('.fig') : [];
+    ths = [];
+    for (var i = 0; i < as.length; i++) {
+      list.push(as[i].getAttribute('href'));
+      ths.push(as[i].querySelector('img') || as[i]);
+    }
+    if (!list.length) { list = [href]; ths = [thumb || null]; }
+    at = Math.max(0, list.indexOf(href));
+    origin = thumb || null;
+    closing = false;
+    seq++;
+
+    var el = layers[0];
+    front = 0;
+    flush(el);
+    flush(layers[1]);
+    syncPtr();
+    el.style.transformOrigin = 'center center';
+    el.src = list[at];
+
+    meta();
+    lb.classList.add('on');
+    document.documentElement.style.overflow = 'hidden';
+
+    /* 从缩略图的位置和大小长出来（FLIP），不是凭空淡入 */
+    var started = false;
+    var start = function () {
+      if (started) return;          /* rAF 和定时器谁先到就谁跑，只跑一次 */
+      started = true;
+      var ir = el.getBoundingClientRect();
+      var tr = origin && origin.getBoundingClientRect ? origin.getBoundingClientRect() : null;
+      if (tr && tr.width > 6 && ir.width > 6) {
+        var s = Math.max(.14, Math.min(1, tr.width / ir.width));
+        var dx = (tr.left + tr.width / 2) - (ir.left + ir.width / 2);
+        var dy = (tr.top + tr.height / 2) - (ir.top + ir.height / 2);
+        setTf(el, 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')');
+      } else {
+        setTf(el, 'scale(.9)');
+      }
+      void el.offsetWidth;
+      el.style.transition = 'opacity .3s ease,transform .46s ' + EASE_OUT;
+      el.style.opacity = '1';
+      setTf(el, 'none');
+    };
+
+    /* rAF 在后台标签页 / 隐藏 iframe 里可能不触发，一律配一个定时器兜底 */
+    if (el.complete && el.naturalWidth) {
+      requestAnimationFrame(start);
+      setTimeout(start, 60);
+    } else {
+      el.onload = function () { el.onload = null; requestAnimationFrame(start); setTimeout(start, 60); };
+      setTimeout(start, 180);      /* 图再慢也别让画面空着 */
+    }
+
+    /* 整组预热：缩略图用的是同一个文件，已经在缓存里，切图几乎零等待 */
+    for (var wi = 0; wi < list.length; wi++) warm(wi);
+
+    if (list.length > 1) {
+      hint.textContent = window.matchMedia && window.matchMedia('(pointer:coarse)').matches
+        ? '左右滑动切换 · 双指放大' : '← → 键切换 · 滚轮缩放';
+      clearTimeout(hintTimer);
+      hint.classList.add('on');
+      hintTimer = setTimeout(function () { hint.classList.remove('on'); }, 2400);
+    }
+  }
+
+  function close() {
+    if (!lb.classList.contains('on') || closing) return;
+    closing = true;
+    var mySeq = ++seq;
+
+    var el = cur();
+    var ir = el.getBoundingClientRect();
+    var tr = origin && origin.getBoundingClientRect ? origin.getBoundingClientRect() : null;
+    /* 缩略图还在视口里就缩回去，否则原地缩小淡出 */
+    var back = tr && tr.width > 6 && ir.width > 6 &&
+               tr.bottom > 0 && tr.top < window.innerHeight &&
+               tr.right > 0 && tr.left < window.innerWidth;
+
+    if (back) {
+      var s = Math.max(.1, Math.min(1.6, tr.width / ir.width));
+      var dx = (tr.left + tr.width / 2) - (ir.left + ir.width / 2);
+      var dy = (tr.top + tr.height / 2) - (ir.top + ir.height / 2);
+      el.style.transition = 'opacity .26s ease,transform .34s ' + EASE_IN;
+      setTf(el, 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) scale(' + s.toFixed(3) + ')');
+    } else {
+      el.style.transition = 'opacity .22s ease,transform .3s ' + EASE_IN;
+      setTf(el, 'scale(.9)');
+    }
+    el.style.opacity = '0';
+
+    var o = other();
+    if (o.style.opacity !== '0') {
+      o.style.transition = 'opacity .2s ease';
+      o.style.opacity = '0';
+    }
+
+    lb.classList.remove('on');
+    clearTimeout(hintTimer);
+    clearTimeout(tipTimer);
+    hint.classList.remove('on');
+    tipEl.classList.remove('on');
+
+    setTimeout(function () {
+      if (mySeq !== seq) return;      /* 期间又打开了，别把新图清掉 */
+      closing = false;
+      document.documentElement.style.overflow = '';
+      layers[0].removeAttribute('src');
+      layers[1].removeAttribute('src');
+      flush(layers[0]);
+      flush(layers[1]);
+      front = 0;
+    }, 380);
+  }
+
+  /* 换图：两层交叉淡入淡出，方向跟手一致（左滑 → 新图从右边进来） */
+  function switchTo(n, dir, fromX) {
+    var my = ++seq;
+    at = n;
+    meta();
+
+    var oldEl = cur();
+    var newEl = other();
+    var base   = fromX || 0;
+    var outTo  = base - dir * 90;     /* 旧图从当前位置继续滑出去 */
+    var inFrom = dir * 90;            /* 新图从反方向滑进来 */
+
+    newEl.style.transition = 'none';
+    setTf(newEl, 'translateX(' + inFrom + 'px) scale(.975)');
+    newEl.style.opacity = '0';
+    newEl.src = list[n];
+
+    var gone = false;
+    var run = function () {
+      if (gone) return;
+      gone = true;
+      if (my !== seq) return;             /* 期间又切了，交给新的那次 */
+
+      /* 先把新图的起点落实并提交一帧，过渡才有起点 */
+      newEl.style.transition = 'none';
+      setTf(newEl, 'translateX(' + inFrom + 'px) scale(.975)');
+      newEl.style.opacity = '0';
+      void newEl.offsetWidth;
+
+      oldEl.style.transition = 'opacity .28s ease,transform .42s ' + EASE_SWAP;
+      setTf(oldEl, 'translateX(' + outTo.toFixed(1) + 'px) scale(.975)');
+      oldEl.style.opacity = '0';
+
+      newEl.style.transition = 'opacity .34s ease,transform .44s ' + EASE_SWAP;
+      setTf(newEl, 'none');
+      newEl.style.opacity = '1';
+
+      front = 1 - front;
+      zReset(oldEl);
+      zReset(newEl);
+      syncPtr();
+      if (ths[n]) origin = ths[n];        /* 关闭时飞回当前这张的缩略图 */
+      warm(n + 1);
+      warm(n - 1);
+    };
+
+    if (newEl.complete && newEl.naturalWidth) {
+      requestAnimationFrame(run);
+      setTimeout(run, 60);
+    } else {
+      newEl.onload = function () { newEl.onload = null; requestAnimationFrame(run); setTimeout(run, 60); };
+      setTimeout(run, 400);        /* 图没回来也别卡住，最多等 0.4 秒 */
+    }
+  }
+
+  /* 到头了：图往那个方向顶一下再弹回，同时给文字提示 */
+  function bump(dir) {
+    var el = cur();
+    var back = function () {
+      stage.classList.remove('drag');
+      setTf(el, '');
+    };
+    stage.classList.add('drag');
+    setTf(el, 'translateX(' + (dir * 24) + 'px)');
+    requestAnimationFrame(function () { requestAnimationFrame(back); });
+    setTimeout(back, 60);
+  }
+
+  /* 返回 true 表示真的切换了 */
+  function step(d, fromX) {
+    if (list.length < 2) return false;
+    var n = at + d;
+    if (n < 0) {
+      bump(-1);
+      tip('已经是第一张了');
+      return false;
+    }
+    if (n >= list.length) {
+      bump(1);
+      tip('已经是最后一张了');
+      return false;
+    }
+    switchTo(n, d, fromX);
+    return true;
+  }
+
+  /* ---------- 手势：单指切图 / 放大后平移 / 双指缩放 / 双击放大 ---------- */
+  var sx = 0, sy = 0, dx = 0, dragging = false, lock = 0;
+  var pts = {}, pinch = null, panBase = null;
+  var lpTimer = 0, lpFired = false;      /* 长按：交给系统菜单，我们不拦 */
+  var tapTimer = 0, lastTap = 0;
+
+  function stageCenter() {
+    var r = stage.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  }
+  function ptCount() { return Object.keys(pts).length; }
+  function twoPts() {
+    var ids = Object.keys(pts);
+    if (ids.length < 2) return null;
+    var a = pts[ids[0]], b = pts[ids[1]];
+    return { d: Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) || 1,
+             x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  }
+  function clearLp() { clearTimeout(lpTimer); lpTimer = 0; }
+
+  function onDown(e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+
+    if (ptCount() === 2) {                       /* 双指：开始缩放 */
+      clearLp();
+      lb.classList.add('zooming');
+      dragging = false;
+      stage.classList.add('drag');
+      var t = twoPts();
+      var el = cur();
+      var c = stageCenter();
+      pinch = { d: t.d, z: el._z || 1 };
+      pinch.d0x = ((t.x - c.x) - (el._px || 0)) / pinch.z;
+      pinch.d0y = ((t.y - c.y) - (el._py || 0)) / pinch.z;
+      return;
+    }
+    if (ptCount() > 2) return;
+
+    /* 单指：可能是切图 / 平移 / 长按 */
+    dragging = true; lock = 0; dx = 0; pinch = null;
+    sx = e.clientX; sy = e.clientY;
+    var el2 = cur();
+    panBase = { x: el2._px || 0, y: el2._py || 0, sx: sx, sy: sy };
+    stage.classList.add('drag');
+
+    /* 长按交给系统弹「保存 / 转发」菜单：手指不动就不拦任何事件 */
+    if (e.pointerType !== 'mouse') {
+      clearLp();
+      lpFired = false;
+      lpTimer = setTimeout(function () { lpFired = true; }, 620);
+    }
+  }
+
+  function onMove(e) {
+    if (pts[e.pointerId]) { pts[e.pointerId].x = e.clientX; pts[e.pointerId].y = e.clientY; }
+
+    if (pinch && ptCount() >= 2) {               /* 双指缩放 */
+      var t = twoPts();
+      if (!t) return;
+      var el = cur();
+      var c = stageCenter();
+      var z = Math.max(ZMIN, Math.min(ZMAX, pinch.z * (t.d / pinch.d)));
+      el._z  = z;
+      el._px = (t.x - c.x) - pinch.d0x * z;
+      el._py = (t.y - c.y) - pinch.d0y * z;
+      zClampPan(el);
+      el.style.transform = tfOf(el);
+      if (e.cancelable) e.preventDefault();
+      return;
+    }
+
+    if (!dragging) return;
+    var mx = e.clientX - sx, my = e.clientY - sy;
+
+    if (!lock) {
+      if (Math.abs(mx) < 5 && Math.abs(my) < 5) return;
+      clearLp();                                  /* 动了就不算长按 */
+      var el0 = cur();
+      if ((el0._z || 1) > 1.001) {
+        lock = 2;                                 /* 放大后：单指平移 */
+      } else {
+        lock = Math.abs(mx) > Math.abs(my) ? 1 : -1;
+        if (lock === -1) {                        /* 竖着划：不拦，交给关闭 */
+          dragging = false;
+          stage.classList.remove('drag');
+          shift(0);
+          return;
+        }
+      }
+    }
+
+    if (lock === 2) {                             /* 平移 */
+      var el1 = cur();
+      el1._px = panBase.x + (e.clientX - panBase.sx);
+      el1._py = panBase.y + (e.clientY - panBase.sy);
+      zClampPan(el1);
+      el1.style.transform = tfOf(el1);
+      if (e.cancelable) e.preventDefault();
+      return;
+    }
+
+    if (e.cancelable) e.preventDefault();
+    dx = mx;
+    var d = Math.abs(dx) > 130
+      ? (dx > 0 ? 1 : -1) * (130 + (Math.abs(dx) - 130) * 0.35)
+      : dx;
+    shift(d * 0.92);                              /* 1 倍：跟手切图 */
+  }
+
+  function onUp(e) {
+    if (e && e.pointerId != null) delete pts[e.pointerId];
+    clearLp();
+
+    if (pinch) {
+      if (ptCount() < 2) {
+        pinch = null;
+        panBack();
+        stage.classList.remove('drag');
+        lb.classList.remove('zooming');
+      }
+      return;
+    }
+    if (!dragging) return;
+    dragging = false;
+    stage.classList.remove('drag');
+
+    if (lock === 2) { panBase = null; return; }
+    var d = dx; dx = 0;
+    if (Math.abs(d) > 8) lastDrag = Date.now();
+    if (d <= -48) step(1, d * 0.92);
+    else if (d >= 48) step(-1, d * 0.92);
+    else shift(0);
+  }
+
+  /* 松手后如果几乎没放大，回正 */
+  function panBack() {
+    var el = cur();
+    if (!el) return;
+    if ((el._z || 1) <= 1.02) {
+      el.style.transition = 'transform .22s ' + EASE_SWAP;
+      zReset(el);
+      el.style.transform = tfOf(el);
+      setTimeout(function () { el.style.transition = ''; }, 260);
+    }
+  }
+
+  /* 双击放大 / 还原 */
+  function toggleZoom(cx, cy) {
+    var el = cur();
+    if (!el) return;
+    var c = stageCenter();
+    el.style.transition = 'transform .28s ' + EASE_SWAP;
+    if ((el._z || 1) > 1.02) {
+      zReset(el);
+      el.style.transform = tfOf(el);
+    } else {
+      zAround(el, 2.5, cx - c.x, cy - c.y);
+    }
+    setTimeout(function () { el.style.transition = ''; }, 320);
+  }
+
+  stage.addEventListener('pointerdown', onDown);
+  stage.addEventListener('pointermove', onMove);
+  stage.addEventListener('pointerup', onUp);
+  stage.addEventListener('pointercancel', onUp);
+  stage.addEventListener('pointerleave', onUp);
+  for (var k = 0; k < layers.length; k++) {
+    layers[k].addEventListener('dragstart', function (e) { e.preventDefault(); });
+  }
+
+  /* 桌面：滚轮缩放 */
+  stage.addEventListener('wheel', function (e) {
+    if (!lb.classList.contains('on')) return;
+    e.preventDefault();
+    var el = cur();
+    if (!el) return;
+    var c = stageCenter();
+    var z = Math.max(ZMIN, Math.min(ZMAX, (el._z || 1) * (e.deltaY < 0 ? 1.14 : 0.88)));
+    el.style.transition = 'transform .12s linear';
+    zAround(el, z, e.clientX - c.x, e.clientY - c.y);
+    setTimeout(function () { el.style.transition = ''; }, 140);
+  }, { passive: false });
+
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var a = t && t.closest ? t.closest('.fig') : null;
+    if (a) {
+      e.preventDefault();
+      var th = (t.tagName === 'IMG') ? t : a.querySelector('img');
+      open(a.getAttribute('href'), a.parentNode, th || a);
+      return;
+    }
+    if (Date.now() - lastDrag < 350) return;      /* 刚拖完，别当成点击关闭 */
+    if (lpFired) { lpFired = false; return; }     /* 刚长按过（系统菜单），别顺手关掉 */
+
+    var isImg = t && t.classList && t.classList.contains('lb-i');
+    if (isImg) {
+      /* 点在图上：单击关闭，双击放大/还原 —— 用 300ms 区分 */
+      if (Date.now() - lastTap < 300) {
+        clearTimeout(tapTimer);
+        lastTap = 0;
+        toggleZoom(e.clientX, e.clientY);
+        return;
+      }
+      lastTap = Date.now();
+      clearTimeout(tapTimer);
+      tapTimer = setTimeout(function () { close(); }, 300);
+      return;
+    }
+    if (t === lb || t === stage) close();
+  });
+  document.getElementById('lbX').addEventListener('click', close);
+  pv.addEventListener('click', function (e) { e.stopPropagation(); step(-1, 0); });
+  nx.addEventListener('click', function (e) { e.stopPropagation(); step(1, 0); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('on')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1, 0);
+    else if (e.key === 'ArrowRight') step(1, 0);
+  });
+})();
+</script></body>
+</html>
